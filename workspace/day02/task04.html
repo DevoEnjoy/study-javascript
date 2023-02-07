@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+    // [task04.html]
+    
+    //     pr("%", 5);
+    //     결과 : %%%%%
+    
+    //     위의 결과가 나오는 함수를 선언하여 사용한다.
+    //     출력은 콜백함수를 사용한다.
+
+    // function pr(string, count) {
+    //     var result = "";
+    //     for (let i = 0; i < count; i++) {
+    //         result += string;
+    //     }
+    //     cb(result);
+    // }
+
+    // function cb(result) {
+    //     document.write(`<h3>` + result + `</h3>`);
+    // }
+
+    // pr("%", 5);
+
+
+    function pr(string, count, callback) {
+        var result = "";
+        for (let i = 0; i < count; i++) {
+            result += string;
+        }
+        if (callback) {
+            callback(result);
+        }
+        return;
+    }
+
+    pr("%", 5, function (result) {
+        document.write(`<h3>결과: ${result}</h3>`);
+    });
+</script>
+
+</html>

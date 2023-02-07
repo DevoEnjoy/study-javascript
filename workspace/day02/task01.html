@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    [task01.html]
+        마우스를 올려보세요
+        ----------------------------------------(hr)
+        여기에 마우스를 올리면 배경색이 노란색으로 변합니다.
+    
+        ※ 배경색 변경은 노란색으로 하고, 초기 배경색은 흰색으로 한다.
+        ※ 태그이름.style.background = '색이름';
+    -->
+    <h2>마우스를 올려보세요</h2>
+    <hr>
+    <h2 onmouseover="body.style = `background: yellow`" onmouseout="body.style = `background: white`">여기에 마우스를 올리면 배경색이
+        노란색으로 변합니다.</h2>
+    <hr>
+    <hr>
+    <!-- [task02.html]
+
+        월화수목금토일
+        ---------------------(hr)
+        000은 출근
+
+        사용자에게 요일을 입력받고 월~목은 출근, 다른 날은 휴일을 출력한다.
+        요일은 "월", "화", ... 형식으로 입력받는다.
+    -->
+
+    <h2 onmouseover="week()">월화수목금토일</h2>
+    <hr>
+    <!-- document.write(`<h3>${prompt("이름을 입력하세요", "홍길동")}</h3>`); -->
+
+    <hr>
+    <hr>
+
+
+</body>
+<script>
+    function week() {
+        var inputDay = prompt("요일을 입력하세요");
+        var result = "";
+        // result = (inputDay == ("월","화","수","목") ? "출근" : "휴일");
+        switch (inputDay) {
+            case "금":
+            case "토":
+            case "일":
+                result = "휴일";
+                break;
+            default:
+                result = "출근";
+                break;
+        }
+        document.write(`<h3>` + inputDay + `요일은 ` + result + `</h3>`);
+    }
+    week();
+
+    // document.write(`<h3>${prompt("이름을 입력하세요")}</h3>`);
+</script>
+
+</html>
