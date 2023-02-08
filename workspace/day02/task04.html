@@ -46,6 +46,33 @@
     pr("%", 5, function (result) {
         document.write(`<h3>결과: ${result}</h3>`);
     });
+    // ======================
+    let character = prompt("출력하실 문자를 입력하세요.");
+    let count = prompt("출력하실 횟수를 입력하세요.");
+    let text;
+    with(document){
+        text = `<h3>pr(<q>${character}</q>, ${count})</h3>`;
+        write(text);
+        write(`<button onclick="pr('${character}', ${count}, print)">결과 확인</button>`);
+    }
+
+    function pr(character, count, callback) {
+        let result = "";
+        for (let i = 0; i < count; i++) {
+            result += character;
+        }
+        if(callback){
+            callback(result);
+            return;
+        }
+        return result;
+    }
+
+    function print(result){
+        text += `<h4>결과: ${result}</h4>`;
+        document.write(text);
+    }
+
 </script>
 
 </html>
