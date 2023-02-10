@@ -163,13 +163,13 @@ file.readFile('shop.json', 'utf-8', (error, content) => {
         /* shop.json의 형식이 JSON이므로 parse하여 객체화 한다. */
         arContent = JSON.parse(content);
         /*  shop.json에서 읽어온 각 가격과 재고의 합을 Array에 담음 */
-        let arInfo = [
+        let arInfo = {
             /* 누적 가격 */
-            arContent.map(e => e.price).reduce((totalPrice, price) => totalPrice + price),   
+            totalPrice: arContent.map(e => e.price).reduce((totalPrice, price) => totalPrice + price),   
         
             /* 누적 재고 */
-            arContent.map(e => e.stock).reduce((totalStock, stock) => totalStock + stock)    
-        ]
+            totalStock: arContent.map(e => e.stock).reduce((totalStock, stock) => totalStock + stock)    
+        }
         file.writeFile('sum.json', JSON.stringify(arInfo), 'utf-8', error => console.log(error ? error : "성공!"));
     }
 });

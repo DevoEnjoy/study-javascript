@@ -1,0 +1,10 @@
+table tr td{
+    width: 100px;
+}
+table th {
+    background-color: bisque;
+}
+
+table tr {
+    text-align: center;
+}
