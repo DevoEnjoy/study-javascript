@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <table align="center">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result" disabled />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="document.getElementById('result').value+='1'" /></td>
+            <td><input type="button" value="2" onclick="document.getElementById('result').value+='2'" /></td>
+            <td><input type="button" value="3" onclick="document.getElementById('result').value+='3'" /></td>
+            <td><input type="button" value="+" onclick="document.getElementById('result').value+='+'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="document.getElementById('result').value+='4'" /></td>
+            <td><input type="button" value="5" onclick="document.getElementById('result').value+='5'" /></td>
+            <td><input type="button" value="6" onclick="document.getElementById('result').value+='6'" /></td>
+            <td><input type="button" value="-" onclick="document.getElementById('result').value+='-'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="document.getElementById('result').value+='7'" /></td>
+            <td><input type="button" value="8" onclick="document.getElementById('result').value+='8'" /></td>
+            <td><input type="button" value="9" onclick="document.getElementById('result').value+='9'" /></td>
+            <td><input type="button" value="*" onclick="document.getElementById('result').value+='*'" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="document.getElementById('result').value=''" /></td>
+            <td><input type="button" value="0" onclick="document.getElementById('result').value+='0'" /></td>
+            <td><input type="button" value="="
+                    onclick="document.getElementById('result').value=eval(document.getElementById('result').value)" />
+            </td>
+            <td><input type="button" value="/" onclick="document.getElementById('result').value+='/'" /></td>
+        </tr>
+    </table>
+</body>
+
+</html>

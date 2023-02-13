@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Number to Korean</title>
+</head>
+
+<body>
+    <h1>Convert Number to Korean</h1>
+    <input type="text" id="input-number">
+    <button id="convert-button">Convert</button>
+    <p id="output"></p>
+
+    <script>
+        const koreanNumbers = ['영', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+
+        function convertNumberToKorean(number) {
+            const stringifiedNumber = number.toString();
+            let result = '';
+
+            for (const digit of stringifiedNumber) {
+                result += koreanNumbers[digit];
+            }
+
+            return result;
+        }
+
+        const inputNumber = document.getElementById('input-number');
+        const convertButton = document.getElementById('convert-button');
+        const output = document.getElementById('output');
+
+        convertButton.addEventListener('click', function () {
+            output.textContent = convertNumberToKorean(inputNumber.value);
+        });
+    </script>
+</body>
+
+</html>

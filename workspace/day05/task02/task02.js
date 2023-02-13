@@ -38,6 +38,7 @@ function NumToHan(input) {
         }
     }
     console.log(result);
+    c(result);
     return result;
 }
 
@@ -47,4 +48,8 @@ function createLog(count, text) {
     if (count >= logListMax) { footer.removeChild(footer.firstChild); }
     addDiv.appendChild(addText);
     footer.appendChild(addDiv);
+}
+
+function c(target) {
+    console.log(target);
 }
