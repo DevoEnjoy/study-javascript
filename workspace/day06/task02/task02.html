@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task02.css">
+    <title>NumToHan</title>
+</head>
+
+<body>
+    <main>
+        <div class="numWrap relative">
+            <div class="number">0</div>
+        </div>
+        <h2><b style="color: purple;">-------<b style="color: #020202;">숫자를 한글로 변경</b>-------</b></h2>
+        <div id="output">결과 표시 부분</div>
+        <div class="inputWrap">
+            <input type="text" name="" id="inputText">
+            <input type="button" value="변경" id="inputBtn">
+        </div>
+        <footer>
+        </footer>
+    </main>
+</body>
+<!-- <script src="task02.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script>
+    const hans = "영일이삼사오육칠팔구".split("");
+    const $inputText = $("#inputText");
+    const $inputBtn = $("#inputBtn");
+    const $output = $("#output");
+    const $countDiv = $("div.number");
+    const $footer = $('footer');
+    const logListMax = 10;
+
+    let count = 0;
+
+    $inputBtn.click(() => {
+        if ($inputText.val) {    //  입력이 없으면 반응 없음
+            $countDiv.text = ++count;
+            var result = NumToHan($inputText.val());
+            $output.text(result);
+        }
+    });
+
+    function NumToHan(input) {
+        var arInput = input.split("");
+        var result = "";
+        var dotCount = 0;
+
+        for (let i = 0; i < arInput.length; i++) {
+            var han = hans[arInput[i]];
+            if (han) {
+                result += han;
+            } else if (arInput[i] === '.' & dotCount == 0) {
+                dotCount++;
+                result += '점';
+            } else {
+                result = "숫자만 입력해주세요.";
+                break;
+            }
+        }
+        console.log(result);
+        c(result);
+        return result;
+    }
+
+    function c(target) {
+        console.log(target);
+    }
+
+</script>
+
+</html>
